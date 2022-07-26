@@ -1,0 +1,1047 @@
+class Student
+  {
+    String name;
+    String address;
+    int rollno;
+    String batch;
+    void learn()
+    {
+      System.out.println(name+" Learning");
+    }
+    void write()
+    {
+      System.out.println(name+ " writing");
+    }
+    void read()
+    {
+      System.out.println(name+" reading");
+    }
+   public  String toString()
+    {
+      return "name : "+name+"  address: "+address;
+    }
+  }
+class Main{
+   public static void main(String args[])
+    {
+      //object create
+     
+      Student st1=new Student();
+      st1.name="Lalitha";
+      st1.address="Vijayawada";
+      st1.rollno=123;
+      st1.batch="chanakaya";
+    System.out.println("****student1 Information*****");
+        System.out.println(st1);
+      st1.learn();//calling the metod//instance method
+      st1.write();
+      st1.read();
+      Student st2=new Student();
+      st2.name="Anil";
+      st2.address="Hyderabad";
+      st2.rollno=345;
+      st2.batch="chanakaya";
+          System.out.println("****student2 Information*****");
+      System.out.println(st2);
+      st2.learn();
+      st2.write();
+      st2.read();
+      
+    // System.out.println(st1.name+" "+st1.address+" "+st1.rollno+" "+st1.batch);//hashcode
+    // System.out.println(st2.name+" "+st2.address+" "+st2.rollno+" "+st2.batch);
+  
+      
+    }
+============================================================================================
+    class Empolyee{​
+  String empName;
+  String empAddress;
+  int empId;
+  int empSalary;
+  public String toString(){​
+    return "name :" + empName + "Address :" + empAddress + "Id:"
+      + empId;
+  }​
+  void displInfo(){​
+    System.out.println(empName + empAddress + empId);
+  }​
+  void dispSalary(){​
+    System.out.println(empSalary);
+  }​
+  
+}​
+class Main{​
+  public static void main(String[] args){​
+    Empolyee e1 = new Empolyee();
+    e1.empName = "Tejesh";
+    e1.empAddress = "Vijayawada";
+    e1.empSalary = 20000;
+    e1.empId = 1;
+    e1.displInfo();
+    e1.dispSalary();
+  }​
+}​
+========================================================================================
+parameterized constroctor
+[12:52 PM] Lalitha Ujjaneni
+    import java.util.*;
+class Student
+  {​
+    Scanner sc=new Scanner(System.in);
+    String name;
+    String address;
+    int rollno;
+    String batch;
+    //constructor
+    Student(String n,String a,int r,String b )
+    {​
+      name=n;
+      address=a;
+      rollno=r;
+      batch=b;
+    }​
+    void learn()
+    {​
+      System.out.println(name+" Learning");
+    }​
+    void write()
+    {​
+      System.out.println(name+ " writing");
+    }​
+    void read()
+    {​
+      System.out.println(name+" reading");
+    }​
+   public  String toString()
+    {​
+      return "name : "+name+"  address: "+address+" rollno "+rollno+" batch"+batch;
+    }​
+  }​
+class Main{​
+   public static void main(String args[])
+    {​
+      //object create
+   
+       
+      Student st1=new Student("lalitha","vijayawada",123,"cse");
+ 
+      Student st2=new Student("anitha","hyderabad",345,"IT");
+      System.out.println(st1);
+      System.out.println(st2);
+    }​
+}​
+--------------------------------------------------------------------------------------------
+
+    import java.util.*;
+class Employee
+  {​
+    int eid;
+    String ename;
+    String edept;
+    Employee()
+    {​
+      eid=123;
+      ename="lalitha";
+      edept="accounts";
+    }​
+    Employee(int id,String n,String ed)
+    {​
+      eid=id;
+      ename=n;
+      edept=ed;
+    }​
+   
+    Employee(int id,String n)
+    {​
+      eid=id;
+      ename=n;
+    }​
+    Employee(int id)
+    {​
+      eid=id;
+    }​
+    
+    public String toString()
+    {​
+      return eid+" "+ename+" "+edept;
+    }​
+    
+  }​
+class Main1
+  {​
+    public static void main(String args[])
+    {​
+      Scanner sc=new Scanner(System.in);
+      Employee emp1=new Employee();
+      int id=sc.nextInt();
+      String name=sc.next();
+      String dept=sc.next();
+      Employee emp2=new Employee(id,name,dept);
+      Employee emp3=new Employee(12,"harika");
+      System.out.println(emp1);
+      System.out.println(emp2);
+    }​
+  }​
+================================================================
+setters and getters
+[1:41 PM] Lalitha Ujjaneni
+    import java.util.*;
+class Employee
+  {​
+   private int eid;
+   private String ename;
+   private  String edept;
+    //getters and setters methods
+    //setter used to set the values to variable
+    //getter method used to get the value of varaible
+    void setEid(int id)
+    {​
+      eid=id;
+    }​
+    int getEid()
+    {​
+      return eid;
+    }​
+   
+    
+    public String toString()
+    {​
+      return eid+" "+ename+" "+edept;
+    }​
+    
+  }​
+class Main1
+  {​
+    public static void main(String args[])
+    {​
+      Scanner sc=new Scanner(System.in);
+      Employee emp1=new Employee();
+     emp1.setEid(123);
+      System.out.println(emp1.getEid());
+     
+     
+    }​
+  }​
+============================================================================
+
+    import java.util.*;
+class Employee
+  {​
+   private int eid;
+   private String ename;
+   private  String edept;
+    //getters and setters methods
+    //setter used to set the values to variable
+    //getter method used to get the value of varaible
+    void setEid(int id)
+    {​
+      eid=id;
+    }​
+    void setEname(String name)
+    {​
+      ename=name;
+    }​
+    String getEname()
+    {​
+      return ename;
+    }​
+    void setEdept(String dept)
+    {​
+      edept=dept;
+    }​
+    String getEdept()
+    {​
+      return edept;
+    }​
+    int getEid()
+    {​
+      return eid;
+    }​
+   
+    
+    public String toString()
+    {​
+      return eid+" "+ename+" "+edept;
+    }​
+    
+  }​
+class Main1
+  {​
+    public static void main(String args[])
+    {​
+      Scanner sc=new Scanner(System.in);
+      Employee emp1=new Employee();
+      System.out.println("Enter id");
+     emp1.setEid(sc.nextInt());
+      System.out.println("enter name");
+     emp1.setEname(sc.next());
+      System.out.println("Enter dept");
+      emp1.setEdept(sc.next());
+      System.out.println(emp1.getEid());
+      System.out.println(emp1.getEname());
+      System.out.println(emp1.getEdept());
+     
+     
+    }​
+  }​
+​[5:09 PM] vijender (Guest)
+    https://github.com/vijenderdasari/java_practice.git​​​​​​​
+=============================================================================
+this key word....[12:55 PM] Lalitha Ujjaneni
+    class Student
+  {​
+    Scanner sc=new Scanner(System.in);
+    String name;
+    String address;
+    int rollno;
+    String batch;
+    //constructor
+  Student(String name,String address)
+    {​
+      this.name=name;
+      this.address=address;
+    }​
+    Student(String name,String address,int rollno,String batch )
+    {​
+      this(name,address);
+      this.rollno=rollno;
+      this.batch=batch;
+    }​
+    void learn()
+    {​
+      System.out.println(name+" Learning");
+    }​
+    void write()
+    {​
+     this.learn();
+      System.out.println(name+ " writing");
+    }​
+    void read()
+    {​
+      System.out.println(name+" reading");
+    }​
+   public  String toString()
+    {​
+      return "name : "+name+"  address: "+address+" rollno "+rollno+" batch"+batch;
+    }​
+  }​
+class Main{​
+   public static void main(String args[])
+    {​
+      //object create
+   
+       
+      Student st1=new Student("lalitha","vijayawada",123,"cse");
+ 
+      Student st2=new Student("anitha","hyderabad",345,"IT");
+      System.out.println(st1);
+      System.out.println(st2);
+      st1.write();
+    }​
+}​
+===========================================================
+Static 
+[12:55 PM] Lalitha Ujjaneni
+    class Student
+  {​
+    Scanner sc=new Scanner(System.in);
+    String name;
+    String address;
+    int rollno;
+    String batch;
+    //constructor
+  Student(String name,String address)
+    {​
+      this.name=name;
+      this.address=address;
+    }​
+    Student(String name,String address,int rollno,String batch )
+    {​
+      this(name,address);
+      this.rollno=rollno;
+      this.batch=batch;
+    }​
+    void learn()
+    {​
+      System.out.println(name+" Learning");
+    }​
+    void write()
+    {​
+     this.learn();
+      System.out.println(name+ " writing");
+    }​
+    void read()
+    {​
+      System.out.println(name+" reading");
+    }​
+   public  String toString()
+    {​
+      return "name : "+name+"  address: "+address+" rollno "+rollno+" batch"+batch;
+    }​
+  }​
+class Main{​
+   public static void main(String args[])
+    {​
+      //object create
+   
+       
+      Student st1=new Student("lalitha","vijayawada",123,"cse");
+ 
+      Student st2=new Student("anitha","hyderabad",345,"IT");
+      System.out.println(st1);
+      System.out.println(st2);
+      st1.write();
+    }​
+}​
+​[12:57 PM] Pavan velpula (Guest)
+    memory managment
+=====================================================================
+[1:41 PM] Lalitha Ujjaneni
+    import java.util.*;
+class Main
+  {​
+    public static void fact(int n)
+    {​
+      int fact=1;
+      if(n==0)
+      {​
+        fact=0; 
+        System.out.println(fact);
+      }​
+      else if(n==1)
+      {​
+        fact=1;
+        System.out.println(fact);
+      }​
+      else
+      {​
+        for(int i=1;i<=n;i++)
+          {​
+            fact=fact*i;
+            
+          }​
+        System.out.println(fact);
+      }​
+    }​
+      public static void main(String args[])
+        {​
+        Main.fact(10);
+        }​
+    
+  }​
+ ===============================================================================================
+[3:48 PM] Lalitha Ujjaneni
+//single level
+    class Person
+  {​
+    String name;
+    String address;
+    int pid;
+    void walk()
+    {​
+      System.out.println("Walking");
+    }​
+    void sleep()
+    {​
+      System.out.println("Sleeping");
+    }​
+    void eat()
+    {​
+      System.out.println("Eating");
+    }​
+  }​
+class Developer extends Person
+  {​
+    int did;
+    void coding()
+    {​
+      System.out.println("coding");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+      Developer dev=new Developer();
+      dev.name="lalitha";
+      dev.address="Vijayawada";
+      dev.did=123;
+      System.out.println(dev.name+" "+dev.address+" "+dev.did);
+      dev.sleep();
+      dev.walk();
+      dev.eat();
+      dev.coding();
+        
+    }​
+  }​
+​==================================================================
+//hierachial
+    class Person
+  {​
+    String name;
+    String address;
+    int pid;
+    void walk()
+    {​
+      System.out.println("Walking");
+    }​
+    void sleep()
+    {​
+      System.out.println("Sleeping");
+    }​
+    void eat()
+    {​
+      System.out.println("Eating");
+    }​
+  }​
+class Developer extends Person
+  {​
+    int did;
+    void coding()
+    {​
+      System.out.println("coding");
+    }​
+  }​
+class Dancer extends Person{​
+  int gid;
+  void dancing()
+  {​
+    System.out.println("Dancing");
+  }​
+}​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+      Developer dev=new Developer();
+      dev.name="lalitha";
+      dev.address="Vijayawada";
+      dev.did=123;
+      System.out.println(dev.name+" "+dev.address+" "+dev.did);
+      dev.sleep();
+      dev.walk();
+      dev.eat();
+      dev.coding();
+      Dancer dance=new Dancer();
+        
+    }​
+  }​
+========================================================
+//multi level
+    class Person
+  {​
+    String name;
+    String address;
+    int pid;
+    void walk()
+    {​
+      System.out.println("Walking");
+    }​
+    void sleep()
+    {​
+      System.out.println("Sleeping");
+    }​
+    void eat()
+    {​
+      System.out.println("Eating");
+    }​
+  }​
+class Developer extends Person
+  {​
+    int did;
+    void coding()
+    {​
+      System.out.println("coding");
+    }​
+  }​
+class ApplicationDeveloper extends Developer
+  {​
+    void application()
+    {​
+      System.out.println("Mobile Application");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+      Developer dev=new Developer();
+      dev.name="lalitha";
+      dev.address="Vijayawada";
+      dev.did=123;
+      System.out.println(dev.name+" "+dev.address+" "+dev.did);
+      dev.sleep();
+      dev.walk();
+      dev.eat();
+      dev.coding();
+      Dancer dance=new Dancer();
+        
+    }​
+  }​
+=======================================================================
+Hybrid inheritance
+    class Person
+  {​
+    String name;
+    String address;
+    int pid;
+    void walk()
+    {​
+      System.out.println("Walking");
+    }​
+    void sleep()
+    {​
+      System.out.println("Sleeping");
+    }​
+    void eat()
+    {​
+      System.out.println("Eating");
+    }​
+  }​
+class Developer extends Person
+  {​
+    int did;
+    void coding()
+    {​
+      System.out.println("coding");
+    }​
+  }​
+class Dancer extends Person{​
+  int gid;
+  void dancing()
+  {​
+    System.out.println("Dancing");
+  }​
+}​
+class ApplicationDeveloper extends Developer
+  {​
+    void application()
+    {​
+      System.out.println("Mobile Application");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+      Developer dev=new Developer();
+      dev.name="lalitha";
+      dev.address="Vijayawada";
+      dev.did=123;
+      System.out.println(dev.name+" "+dev.address+" "+dev.did);
+      dev.sleep();
+      dev.walk();
+      dev.eat();
+      dev.coding();
+      Dancer dance=new Dancer();
+        
+    }​
+  }​
+=======================================================================
+//Task
+[4:08 PM] Lalitha Ujjaneni
+    Teacher
+Math Teacher
+Physics Teacher
+Teacher
+  name
+  address
+  tid
+  displaydetails(); method
+  mathteacher extends Teacher
+  subject
+  displaySubject();
+pyhsics extends mathteacher
+  main class
+  create object for  physicsteacher and mathteacher
+  and 
+  assign all values and print values
+
+====================================================================
+//overloading or compile time polymorphism
+    class Addition
+  {​
+    void sum(int a,int b)
+    {​
+      System.out.println((a+b));
+    }​
+    void sum(float a,int b)
+    {​
+      System.out.println((a+b));
+    }​
+    void sum(int a,int b,int c)
+    {​
+      System.out.println((a+b+c));
+    }​
+    
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+      Addition addition=new Addition();
+      addition.sum(2,3);
+      addition.sum(2,3,4);
+      addition.sum(2.3f,4);
+      
+    }​
+  }​
+===========================================================
+method overriding or run time polymorphism
+
+    class BMW
+  {​
+    void Mileage()
+    {​
+      System.out.println("18 KM");
+    }​
+   
+  }​
+class AUDI extends BMW
+  {​
+    //overriding
+    void Mileage()
+    {​
+      System.out.println("15 KM");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+      AUDI audi=new AUDI();
+      audi.Mileage();
+      
+      
+    }​
+  }​
+[12:33 PM] Lalitha Ujjaneni
+    class Vehicle
+  {​
+    void run()
+    {​
+      System.out.println("vehicle running");
+    }​
+  }​
+class Bike extends Vehicle
+  {​
+    //overriding
+    void run()
+    {​
+      System.out.println("Bike is running");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+       Bike honda=new Bike();
+    honda.run();
+    }​
+   
+  }​
+===================================================================
+//super key word
+[12:48 PM] Lalitha Ujjaneni
+    class Vehicle
+  {​
+    String color="black";
+    void run()
+    {​
+      System.out.println("vehicle running");
+    }​
+  }​
+class Bike extends Vehicle
+  {​
+    String color="blue";
+    //overriding
+    void color()
+    {​
+      System.out.println(super.color);
+    }​
+    void run()
+    {​
+      super.run();
+      System.out.println("Bike is running");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+       Bike honda=new Bike();
+    honda.run();
+      System.out.println(honda.color);
+      honda.color();
+    }​
+   
+  }​
+==============================================================================
+final keyword
+[1:22 PM] Lalitha Ujjaneni
+    final class Vehicle
+  {​
+      final String color="black";
+    color="Red";
+    Vehicle()
+    {​
+      System.out.println("parent Constructor");
+    }​
+   final void run()
+    {​
+      System.out.println("vehicle running");
+    }​
+  }​
+class Bike extends Vehicle
+  {​
+    String color="blue";
+    //overriding
+    Bike()
+    {​
+      super();
+      System.out.println("child constructor");
+    }​
+    void color()
+    {​
+      System.out.println(super.color);
+    }​
+    void run()
+    {​
+      super.run();
+      System.out.println("Bike is running");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+       Bike honda=new Bike();
+    honda.run();
+      System.out.println(honda.color);
+      honda.color();
+    }​
+   
+  }​
+
+=======================================================================================
+
+    TheObject classis the parent class of all the classes in java by default. In other words, it is the topmost class of java.
+    
+
+public String toString()
+returns the string representation of this object.
+
+===================================================================
+//overloading or compile time polymorphism
+    class Addition
+  {​
+    void sum(int a,int b)
+    {​
+      System.out.println((a+b));
+    }​
+    void sum(float a,int b)
+    {​
+      System.out.println((a+b));
+    }​
+    void sum(int a,int b,int c)
+    {​
+      System.out.println((a+b+c));
+    }​
+    
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+      Addition addition=new Addition();
+      addition.sum(2,3);
+      addition.sum(2,3,4);
+      addition.sum(2.3f,4);
+      
+    }​
+  }​
+===========================================================
+method overriding or run time polymorphism
+
+    class BMW
+  {​
+    void Mileage()
+    {​
+      System.out.println("18 KM");
+    }​
+   
+  }​
+class AUDI extends BMW
+  {​
+    //overriding
+    void Mileage()
+    {​
+      System.out.println("15 KM");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+      AUDI audi=new AUDI();
+      audi.Mileage();
+      
+      
+    }​
+  }​
+[12:33 PM] Lalitha Ujjaneni
+    class Vehicle
+  {​
+    void run()
+    {​
+      System.out.println("vehicle running");
+    }​
+  }​
+class Bike extends Vehicle
+  {​
+    //overriding
+    void run()
+    {​
+      System.out.println("Bike is running");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+       Bike honda=new Bike();
+    honda.run();
+    }​
+   
+  }​
+===================================================================
+//super key word
+[12:48 PM] Lalitha Ujjaneni
+    class Vehicle
+  {​
+    String color="black";
+    void run()
+    {​
+      System.out.println("vehicle running");
+    }​
+  }​
+class Bike extends Vehicle
+  {​
+    String color="blue";
+    //overriding
+    void color()
+    {​
+      System.out.println(super.color);
+    }​
+    void run()
+    {​
+      super.run();
+      System.out.println("Bike is running");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+       Bike honda=new Bike();
+    honda.run();
+      System.out.println(honda.color);
+      honda.color();
+    }​
+   
+  }​
+==============================================================================
+final keyword
+[1:22 PM] Lalitha Ujjaneni
+    final class Vehicle
+  {​
+      final String color="black";
+    color="Red";
+    Vehicle()
+    {​
+      System.out.println("parent Constructor");
+    }​
+   final void run()
+    {​
+      System.out.println("vehicle running");
+    }​
+  }​
+class Bike extends Vehicle
+  {​
+    String color="blue";
+    //overriding
+    Bike()
+    {​
+      super();
+      System.out.println("child constructor");
+    }​
+    void color()
+    {​
+      System.out.println(super.color);
+    }​
+    void run()
+    {​
+      super.run();
+      System.out.println("Bike is running");
+    }​
+  }​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+       Bike honda=new Bike();
+    honda.run();
+      System.out.println(honda.color);
+      honda.color();
+    }​
+   
+  }​
+
+=======================================================================================
+
+    TheObject classis the parent class of all the classes in java by default. In other words, it is the topmost class of java.
+    
+
+public String toString()
+returns the string representation of this object.
+=================================================================
+Abstraction
+
+
+    abstract class Bank
+  {​
+    int deposit;
+    abstract void getRateOfInterest();
+  }​
+class SBI extends Bank
+  {​
+    void getRateOfInterest()
+    {​
+      System.out.println("rate of interest is 8rs");
+    }​
+  }​
+class HDFC extends Bank{​
+  void getRateOfInterest()
+  {​
+     System.out.println("rate of interest is 6rs");
+  }​
+}​
+class Main
+  {​
+    public static void main(String args[])
+    {​
+      Bank bank=new SBI();
+      bank.getRateOfInterest();
+      bank.deposit=12000;
+      System.out.println(bank.deposit);
+      
+      Bank hdfc=new HDFC();
+      hdfc.getRateOfInterest();
+    }​
+  }​
+
+
+
+
+
+
